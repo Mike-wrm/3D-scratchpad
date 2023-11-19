@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://fke2ahwgl727"]
+[gd_scene load_steps=6 format=3 uid="uid://fke2ahwgl727"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_e1oqq"]
 [ext_resource type="PackedScene" uid="uid://i36t2oboo1l5" path="res://player.tscn" id="1_w7iju"]
@@ -8,6 +8,9 @@ size = Vector3(100, 2, 1100)
 
 [sub_resource type="BoxMesh" id="BoxMesh_inlq6"]
 size = Vector3(100, 2, 100)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_pr0j8"]
+height = 1.0
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_e1oqq")
@@ -29,7 +32,13 @@ shadow_enabled = true
 [node name="Player" parent="." instance=ExtResource("1_w7iju")]
 
 [node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 32.7325, 0)
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 29.4198, 25.0141)
 gizmo_extents = 5.13
 
 [node name="Camera3D" type="Camera3D" parent="Marker3D"]
+
+[node name="Ball" type="CharacterBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ball"]
+mesh = SubResource("CapsuleMesh_pr0j8")
+skeleton = NodePath("")

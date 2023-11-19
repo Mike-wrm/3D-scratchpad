@@ -29,7 +29,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_dc1mv")
 shape = SubResource("CapsuleShape3D_4181s")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-target_position = Vector3(30, 0, 0)
+target_position = Vector3(0, 0, -60)
 debug_shape_custom_color = Color(1, 0, 0, 1)
 debug_shape_thickness = 4
 
