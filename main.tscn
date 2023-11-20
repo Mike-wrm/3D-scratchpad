@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://i36t2oboo1l5" path="res://player.tscn" id="1_w7iju"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kpqj0"]
-size = Vector3(100, 2, 1100)
+size = Vector3(200, 2, 200)
 
 [sub_resource type="BoxMesh" id="BoxMesh_inlq6"]
-size = Vector3(100, 2, 100)
+size = Vector3(200, 2, 200)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_pr0j8"]
 height = 1.0
@@ -22,7 +22,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 shape = SubResource("BoxShape3D_kpqj0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56788, 3.9721, -1.61613)
 mesh = SubResource("BoxMesh_inlq6")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -30,6 +29,7 @@ transform = Transform3D(1, 0, 0, 0, -0.000523611, 1, 0, -1, -0.000523611, 0, 53.
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_w7iju")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.936, 0)
 
 [node name="Marker3D" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 29.4198, 25.0141)
