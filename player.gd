@@ -7,8 +7,8 @@ const GRAVITY:float = 20
 var look_target:Vector3
 
 func _process(delta):
-	self.look_at(look_target, Vector3.UP)
-	
+	look_at(look_target, Vector3.UP)
+	rotation.x = 0 # Constant look height
 	
 func _physics_process(delta):
 	var move_vector := Vector3.ZERO

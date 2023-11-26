@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://fke2ahwgl727"]
+[gd_scene load_steps=7 format=3 uid="uid://fke2ahwgl727"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_e1oqq"]
-[ext_resource type="PackedScene" uid="uid://i36t2oboo1l5" path="res://player.tscn" id="1_w7iju"]
+[ext_resource type="Script" path="res://Main.gd" id="1_58o80"]
+[ext_resource type="PackedScene" uid="uid://i36t2oboo1l5" path="res://Player.tscn" id="2_0w8uc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kpqj0"]
 size = Vector3(200, 2, 200)
@@ -9,11 +9,16 @@ size = Vector3(200, 2, 200)
 [sub_resource type="BoxMesh" id="BoxMesh_inlq6"]
 size = Vector3(200, 2, 200)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6gq0e"]
+albedo_color = Color(0, 1, 0, 1)
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_pr0j8"]
-height = 1.0
+material = SubResource("StandardMaterial3D_6gq0e")
+radius = 1.5
+height = 4.0
 
 [node name="Main" type="Node3D"]
-script = ExtResource("1_e1oqq")
+script = ExtResource("1_58o80")
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -28,16 +33,18 @@ mesh = SubResource("BoxMesh_inlq6")
 transform = Transform3D(1, 0, 0, 0, -0.000523611, 1, 0, -1, -0.000523611, 0, 53.9932, 0)
 shadow_enabled = true
 
-[node name="Player" parent="." instance=ExtResource("1_w7iju")]
+[node name="Player" parent="." instance=ExtResource("2_0w8uc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.936, 0)
+collision_layer = 2
 
 [node name="Marker3D" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 29.4198, 25.0141)
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 33.7137, 31.4481)
 gizmo_extents = 5.13
 
 [node name="Camera3D" type="Camera3D" parent="Marker3D"]
 
 [node name="Ball" type="CharacterBody3D" parent="."]
+collision_layer = 4
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ball"]
 mesh = SubResource("CapsuleMesh_pr0j8")

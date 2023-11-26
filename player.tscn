@@ -1,13 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://i36t2oboo1l5"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_o4esj"]
-[ext_resource type="PackedScene" uid="uid://cnid5rnrxtbxt" path="res://vision_master.tscn" id="2_tal00"]
+[ext_resource type="Script" path="res://Player.gd" id="1_4vx13"]
+[ext_resource type="PackedScene" uid="uid://cnid5rnrxtbxt" path="res://VisionMaster.tscn" id="2_tal00"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_2a5he"]
 radius = 3.0
 height = 15.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dc1mv"]
+albedo_color = Color(0.721569, 0, 0, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4181s"]
 radius = 3.0
@@ -15,7 +16,7 @@ height = 15.0
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.8162, 0)
-script = ExtResource("1_o4esj")
+script = ExtResource("1_4vx13")
 
 [node name="Pivot" type="Node3D" parent="."]
 
